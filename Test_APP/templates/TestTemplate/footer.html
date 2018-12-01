@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <script src="{% static "js/footerJS.js" %}"></script>
+
+    <style>
+
+        body{
+            width: 100%;
+        }
+        .navbar {
+            font-family: "Quicksand",sans-serif;
+            color:black;
+            overflow: hidden;
+            background-color: white;
+            position: fixed;
+            bottom: -5%;
+            width: 100%;
+            height: 25px;
+            transition: height 0.5s;
+            -webkit-transition: height 0.5s;
+        }
+        .navbar #infos{
+            display: none;
+        }
+        .navbar:hover #infos{
+            display: block;
+        }
+
+
+        .navbar #arrow_up:hover{
+            color:#f4871f;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 12px;
+
+        }
+
+        .navbar .text_footer a{
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            font-size: 10px;
+            padding: 0px;
+        }
+        .navbar .text_footer a i:hover{
+            color: white;
+        }
+        .navbar a:hover {
+            background: black;
+            color: white;
+        }
+        .navbar .material-icons:hover{
+            color: white;
+        }
+
+        #infos{
+            overflow: hidden;
+            margin-right: 15px;
+            margin-top: 15px;
+            float: right;
+            font-size: 12px;
+            color: #000000;
+        }
+
+        i :hover{
+            color:white;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="navbar" id="navBar">
+
+        <a href="{% url 'index' %}"><b style="font-size: 13px;">Home</b></a>
+        <a href="#news"><b style="font-size: 13px;">News</b></a>
+        <a href="{% url 'email' %}"><b style="font-size: 13px;">Contact</b></a>
+        <i id="arrow_up" class="material-icons" style="margin-left: 450px;">keyboard_arrow_up</i>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <div class="text_footer" style="margin-top: 10px;">
+        <b id="infos">
+            <p id="contact" style="font-size: 16px; "><b>Contact Us: </b></p>
+           <a class="mail" href="mailto:suzi.fp@gmail.com" style=""> <h2 style="padding-right:4px;font-size: 14px;"><i class="material-icons" style="font-size:15px;">email</i> suzi.fp@gmail.com </h2></a>
+           <br> <a class="gps" href="http://maps.google.com/?q= Rua das Olhalvas, 58"><h2 style="font-size: 14px;"><i class="material-icons" style="font-size:15px; :">home</i> Rua das Olhalvas, 58</h2></a>
+        </b>
+    </div>
+</div>
+<script>
+
+	$('.navbar #arrow_up').mouseover(function () {
+    $('.navbar').css('height','200px')
+    $('.navbar #arrow_up').innerHTML = "keyboard_arrow_down";
+    $('.navbar').mouseleave(function () {
+            $('.navbar').css('height','25px')
+
+    })
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+ #title{
+
+        padding: 20px;
+        margin-top: 150px;
+        background:  linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8) );
+        color: #fff;
+        font: 20px 'Quicksand', sans-serif;
+    }
+    body {
+        font: 30px 'Quicksand', sans-serif;
+
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 1.65em;
+        margin: 0 0 30px;
+    }
+
+
+
+    .project {
+        display: inline-block;
+        margin-bottom: 100px;
+        width: calc(50% - 4px);
+        margin-right: 8px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .project:nth-of-type(2n) {
+        margin-right: 0;
+    }
+
+    @media screen and (min-width: 50em) {
+        .project {
+            width: calc(25% - 2px);
+        }
+
+        .project:nth-of-type(2n) {
+            margin-right: 8px;
+        }
+
+        .project:nth-of-type(4n) {
+            margin-right: 0;
+        }
+    }
+
+    .project:hover .image {
+        transform: scale(1.15);
+    }
+
+    figure {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    figcaption {
+        color: white;
+        margin-top: 15px;
+    }
+
+    .image {
+        border: none;
+        width: 217px;
+        height: 150px;
+        display: block;
+        background: #101010;
+        transition: transform .2s ease-in-out;
+    }
+
+    .p .project {
+        display: inline;
+        font-size: 13px;
+        margin: 0;
+        text-decoration: underline;
+        color: blue;
+    }
+
+
+    .typeProject{
+        width: 100%;
+        color: white;
+        text-decoration: underline;
+        margin-bottom: 30px;
+        font: 30px 'Quicksand', sans-serif;
+    }
+
+    .modal {
+        display: inline-block; /* Hidden by default */
+
+        padding-left: 200px;
+        padding-right: 200px;
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        -webkit-animation-name: fadeIn;
+
+        -webkit-animation-duration: 0.4s;
+        animation-name: fadeIn;
+        animation-duration: 0.4s
+    }
+
+    /* Modal Content */
+    .modal-content {
+        display: inline;
+        position: fixed;
+        bottom: 0px;
+        background-color: #fefefe;
+        -webkit-animation-name: slideIn;
+        -webkit-animation-duration: 0.4s;
+        animation-name: slideIn;
+        animation-duration: 0.4s
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal-header {
+        padding: 2px 16px;
+
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    .modal-body {background-color:white;padding: 2px 16px;}
+
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    /* Add Animation */
+    @-webkit-keyframes slideIn {
+        from {bottom: 500px; opacity: 0}
+        to {bottom: 0; opacity: 1}
+    }
+
+    @keyframes slideIn {
+        from {bottom: 500px; opacity: 0}
+        to {bottom: 0; opacity: 1}
+    }
+
+    @-webkit-keyframes fadeIn {
+        from {opacity: 0}
+        to {opacity: 1}
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0}
+        to {opacity: 1}
+    }
+
+    .modal-content::-webkit-scrollbar-thumb{
+        background-color: #f4871f;
+        border-radius: 10px;
+
+    }
+    .modal-content::-webkit-scrollbar
+    {
+        height: 2px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer;}
+    .w3-badge {position:absolute;height:13px;width:13px;padding:0}

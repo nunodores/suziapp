@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Asap|Quicksand" rel="stylesheet">
+
+{% load static %}
+{% load widget_tweaks %}
+
+<style>
+
+    #map iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50% !important;
+        height: 30% !important;
+    }
+
+    #title{
+
+        padding: 20px;
+        margin-top: 150px;
+        background:  linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8) );
+        color: #fff;
+        font: 20px 'Quicksand', sans-serif;
+    }
+
+    label{
+        font-family: 'Asap', sans-serif;
+
+    }
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+    textarea{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+
+    }
+
+    input[type=text]:focus {
+        border: 3px solid #555;
+    }
+
+    textarea:focus{
+        border: 3px solid #555;
+
+    }
+
+</style>
+{% block header %}
+
+    {% include "TestTemplate/header.html" %}
+
+{% endblock %}
+
+{% block extrahead %}
+{% endblock %}
+
+{% block content-wrap %}
+    <p id="title">CONTACTO</p>
+
+    <div id="contact_wrap" class="element1 col-md-5"  style="padding-right: 200px; margin-bottom: 1000px;">
+
+        <div id="contact" style=" width:600px;background: white;border-radius: 12px;padding-right: 70px; padding-left: 30px;text-align: left; margin-bottom: 50px; margin-top: 200px; margin-left: 100px; position: absolute;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <div id="c_form">
+                <br /><br />
+                <form class="form-horizontal" role="form" action="." method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.errors %}
+                            <div class="form-group has-error">
+                                <label class="col-md-3 control-label" for="id_{{ field.name }}">{{ field.label }}</label>
+                                <div class="col-md-6">
+                                    {{ field|attr:"class:form-control" }}
+                                    <span class="help-block">
+                                {% for error in  field.errors %}{{ error }}{% endfor %}
+                            </span>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="id_{{ field.name }}">{{ field.label }}</label>
+                                <div class="col-md-6">
+                                    {{ field|attr:"class:form-control" }}
+                                    {% if field.help_text %}
+                                        <p class="help-block"><small>{{ field.help_text }}</small></p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-md-6">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div><!-- end c_form -->
+
+        </div><!-- end contact -->
+
+    </div><!-- end contact_wrap -->
+    <div id="map" class="element2 col-md-7" style="padding-bottom: 75%; height: 0; overflow: hidden; position: absolute; margin-top: 140px; margin-left: 850px; ">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.907929256599!2d-8.799947385125748!3d39.74171897944928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd227370cdce89fd%3A0xb31e9216315b1a75!2sTv.+R.+das+Olhalvas+58%2C+2410-149+Leiria%2C+Portugal!5e0!3m2!1spt-PT!2sbe!4v1540550517763" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div style="color:white;position: absolute;margin-top: 325px;">
+            <h1><b>Suzy Pereira</b></h1>
+            <h3 style="font-size: 18px;" >Tv. Rua das olhalvas, 58</h3>
+            <h3 style="font-size: 18px;">2410-149 Leiria, Portugal</h3>
+            <br>
+            <h3><i class="material-icons md-light">phone_in_talk</i> <u>+35191477522</u></h3>
+            <a href="mailto:suzi.fp@gmail.com" style="color:#f4871f;"><h3><i class="material-icons md-light">email</i> <u>suzy.fp@gmail.com</u></h3></a>
+
+        </div>
+    </div>
+
+
+    {% include "TestTemplate/footer.html" %}
+
+{% endblock %}

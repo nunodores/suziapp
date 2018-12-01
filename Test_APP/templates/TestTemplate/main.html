@@ -1,0 +1,57 @@
+{% load static %}
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/loader.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="{% static "js/jsPreloader/main.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/jsPreloader/vendor/jquery-1.9.1.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/jsPreloader/vendor/modernizr-2.6.2.min.js" %}"></script>
+    <script src="{% static "js/footerJS.js" %}"></script>
+
+
+    <style>
+
+
+    </style>
+
+
+</head>
+<body>
+
+<div class="demo-content">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+
+    <div class="content">
+        {% include 'TestTemplate/header.html' %}
+
+
+        {% include 'TestTemplate/centerPage.html' %}
+
+        {% include 'TestTemplate/footer.html' %}
+    </div>
+
+</div>
+<script>
+    $(document).ready(function() {
+
+	setTimeout(function(){
+		$('body').addClass('loaded');
+	}, 1000);
+
+});
+</script>
+
+</body>
+
+
+</html>

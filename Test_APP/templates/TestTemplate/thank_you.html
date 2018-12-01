@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<script type="text/javascript" src="{% static "js/typed.js/dist/typed.min.js" %}"></script>
+    <meta http-equiv="refresh" content="7;url = {% url 'email' %}" />
+
+    <style>
+        #writing-text{
+            color: white;
+            font-family: 'Asap', sans-serif;
+            height: 300px;
+            width: 900px;
+            font-size: 40px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 25%;
+        }
+    </style>
+{% block header %}
+
+    {% include "TestTemplate/header.html" %}
+
+
+{% endblock %}
+
+{% block content %}
+
+   <div id="welcomeScreen">
+
+    <div id="textWelcome">
+        <span id="writing-text" ></span>
+    </div>
+</div>
+
+<script>
+	window.onload = function typeAnimation() {
+		Typed.new("#writing-text", {
+			strings: [
+				"Thank you for contacting us!", "We will attempt to get back to you within 48 hours"
+			],
+			// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+			stringsElement: null,
+			// typing speed
+			typeSpeed: 1,
+			contentType: 'text',
+			callback: function() {
+				$("#writing-text").css({"color": "#fff", "background-color": "#C8412B"});
+			},
+			preStringTyped: function() {},
+			onStringTyped: function() {}
+		});
+	}</script>
+
+    {%  block footer %}
+        {% include "TestTemplate/footer.html" %}
+
+    {% endblock %}
+{% endblock %}

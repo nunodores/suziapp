@@ -1,0 +1,168 @@
+{% load static %}
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0
+
+        }
+
+
+        body {
+            background: #101010;
+            background-size: cover;
+            position: relative;
+            overflow: auto;
+        }
+
+
+
+
+        .pn-ProductNav img {
+            display: block;
+
+            width: 60vw;
+            height: 70vh;
+            object-fit: cover;
+            flex: 0 0 auto;
+
+        }
+
+
+
+        .pn-ProductNav {
+            /* Make this scrollable when needed */
+            overflow-x: auto;
+            width: 82%;
+            margin-top: 120px;
+            margin-left: 110px;
+            /* We don't want vertical scrolling */
+            /* Make an auto-hiding scroller for the 3 people using a IE */
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            /* For WebKit implementations, provide inertia scrolling */
+            -webkit-overflow-scrolling: touch;
+            /* We don't want internal inline elements to wrap */
+            white-space: nowrap;
+            position: absolute;
+            padding-bottom: 10px;
+
+            /* Remove the default scrollbar for WebKit implementations */
+        }
+
+        .pn-ProductNav::-webkit-scrollbar-thumb{
+            background-color: #c86823;
+            border-radius: 10px;
+
+        }
+        .pn-ProductNav::-webkit-scrollbar
+        {
+            height: 8px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        .pn-ProductNav_Link {
+            text-decoration: none;
+            color: #888;
+            font-size: 1.2em;
+            font-family: -apple-system, sans-serif;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+        }
+        .pn-ProductNav_Link + .pn-ProductNav_Link {
+            margin-left: 12px;
+            padding-left: 10px;
+            border-left: 1px solid #eee;
+        }
+        .pn-ProductNav_Link[aria-selected="true"] {
+            color: #111;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+            right: 0;
+            overflow: hidden;
+            width: 60vw;
+            height:0;
+            transition: .5s ease;
+        }
+
+
+        .pn-ProductNav_Link.one:hover .overlay {
+            bottom: 1.3%;
+            margin-bottom: 9px;
+            height: 100%;
+
+        }
+
+        .pn-ProductNav_Link.two:hover .overlay{
+            bottom: 1.3%;
+            margin-bottom: 9px;
+            height: 100%;
+        }
+
+        .pn-ProductNav_Link.three:hover .overlay{
+            bottom: 1.3%;
+            margin-bottom: 9px;
+            height: 100%;
+        }
+
+        .text {
+            color: white;
+            font-size: 40px;
+            position: absolute;
+            font-family: 'Quicksand', sans-serif;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+<nav class="pn-ProductNav">
+    <div class="pn-ProductNav_Contents">
+        <figure class="pn-ProductNav_Link one"><img src="{% static 'images/apartment-architectural-design-architecture-323780.jpg' %}">
+            <a href="{% url 'project' %}#habitacao">
+                <div class="overlay">
+                    <div class="text">Habitação</div>
+                </div>
+            </a>
+        </figure>
+        <figure class="pn-ProductNav_Link two"><img src="{% static 'images/apartments-architecture-balcony-273683.jpg' %}">
+            <a href="{% url 'project' %}#hotelaria"> <div class="overlay" style="margin-left: 846px;">
+                <div class="text">Hotelaria</div>
+            </div>
+            </a></figure>
+        <figure class="pn-ProductNav_Link three" ><img src="{% static 'images/apartment-balcony-building-271689.jpg' %}">
+            <a href="{% url 'project' %}#servicos">
+                <div class="overlay" style="margin-left: 1692px;">
+                    <div class="text">Serviços</div>
+                </div>
+            </a>
+        </figure>
+    </div>
+
+
+</nav>
+
+</body>
+</html>

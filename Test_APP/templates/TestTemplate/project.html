@@ -1,0 +1,242 @@
+{% load static %}
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Asap|Quicksand" rel="stylesheet">
+<script>
+    var d = {{ data|safe }}
+</script>
+<script type="text/javascript" src="{% static "js/app.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "css/project.css" %}">
+
+<style>
+
+
+</style>
+
+{% block header %}
+
+    {% include "TestTemplate/header.html" %}
+    <p id="title">PROJECTOS</p>
+    <div style="width: 100%; margin-top: 50px; margin-left: 250px;">
+        <div>
+
+            <h1 class="typeProject" id="habitacao" style="padding-top:50px;width: 100%;">Habitação<br></h1>
+
+            <a class="project" id="Casa de Leiria" onclick="getId(this.id)" >
+                <figure>
+                    <img class="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg01.jpg" alt="">
+                    <figcaption>
+                        Casa de Leiria
+                    </figcaption>
+                </figure>
+            </a>
+            <a class="project" id="Casa Cork" onclick="getId(this.id)" >
+                <figure>
+                    <img class="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg02.jpg" alt="">
+                    <figcaption>
+                        Casa Cork
+                    </figcaption>
+                </figure>
+            </a>
+            <a class="project" id="Moveis Caneiro" onclick="getId(this.id)">
+                <figure>
+                    <img class="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg03.jpg" alt="">
+                    <figcaption>
+                        Moveis Caneiro
+                    </figcaption>
+                </figure>
+            </a>
+            <a class="project" id="Hotel de Lisboa" onclick="getId(this.id)">
+                <figure>
+                    <img class="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg04.jpg" alt="">
+                    <figcaption>
+                        Hotel de Lisboa
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <hr style="padding:50px;color:white;">
+
+        <div>
+            <h1 class="typeProject" id="hotelaria" style="width: 100%;">Hotelaria</h1>
+
+
+            <a class="project" id="Museu da Cultura" onclick="getId(this.id)">
+
+                <figure>
+                    <img class="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg05.jpg" alt="">
+                    <figcaption>
+                        Museu da Cultura
+                    </figcaption>
+                </figure>
+            </a>
+            <a class="project" id="Global Visao" onclick="getId(this.id)">
+                <figure>
+                    <img class="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg06.jpg" alt="">
+                    <figcaption>
+                        Global Visao
+                    </figcaption>
+                </figure>
+            </a>
+            <a class="project" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg07.jpg">
+                <figure>
+                    <img class="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg07.jpg" alt="">
+                    <figcaption>
+                        Hotel Recinto
+                    </figcaption>
+                </figure>
+            </a>
+
+        </div>
+        <hr style="color:white;">
+
+        <div>
+            <h1 class="typeProject" id="servicos" style="width: 100%;">Serviços</h1>
+
+            <a class="project" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg08.jpg">
+                <figure>
+                    <img class="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg08.jpg" alt="">
+                    <figcaption>
+                        Casa Setúbal
+                    </figcaption>
+                </figure>
+            </a>
+            <a class="project" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg09.jpg">
+                <figure>
+                    <img class="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg09.jpg" alt="">
+                    <figcaption>
+                        Maxiplas
+                    </figcaption>
+                </figure>
+            </a>
+            <a class="project" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg10.jpg">
+                <figure>
+                    <img class="image"src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/placeimg10.jpg" alt="">
+                    <figcaption>
+                        Insignare
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+
+                <h2 id="titleProject"></h2>  <br>
+                <div class="w3-content w3-display-container" style="max-width:800px">
+                    <img class="mySlides" id="imgSlide" style="width:100%">
+                    <img class="mySlides" id="imgSlideTwo" style="width:100%">
+
+                    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                        <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                        <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+
+                <p id="bodyModal">Some text in the Modal Body</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+    // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+		function getId(clickid) {
+            var btn = document.getElementById(clickid);
+
+            btn.onclick = function() {
+
+                for (i = 0; i < d.length; i++){
+
+                    if(d[i].name === clickid){
+
+                        document.getElementById('titleProject').innerHTML = d[i].name;
+                        document.getElementById('bodyModal').innerHTML = d[i].summary;
+
+                        var photo = d[i].photos;
+
+                            document.getElementById('imgSlide').setAttribute('src',photo[0]);
+                            document.getElementById('imgSlideTwo').setAttribute('src',photo[1]);
+
+
+                    }
+
+
+                }
+
+
+                modal.style.display = "block";
+                modal.style.overflow = "scroll";
+            }
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        //slideshow
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " w3-white";
+        }
+
+
+    </script>
+{% endblock %}
+{% block content-wrap %}
+    {% include "TestTemplate/footer.html" %}
+
+{% endblock %}
+

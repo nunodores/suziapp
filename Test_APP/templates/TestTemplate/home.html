@@ -1,0 +1,57 @@
+
+{% load staticfiles %}
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="{% static "js/app.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/typed.js/dist/typed.min.js" %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10;url = {% url 'main' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Asap|Quicksand" rel="stylesheet">
+
+    <style>
+        body{
+            color: white;
+            background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8) ),url("{% static 'images/welcomeImage.jpg' %}");
+            background-size: cover;
+
+        }
+        .center{
+
+        }
+
+        #welcomeScreen{
+
+        }
+
+        #writing-text{
+            font-family: 'Asap', sans-serif;
+            height: 200px;
+            width: 700px;
+            font-size: 40px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 25%;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<div id="welcomeScreen">
+
+    <div id="textWelcome">
+        <span id="writing-text" ></span>
+    </div>
+</div>
+
+
+</body>
+
+
+</html>

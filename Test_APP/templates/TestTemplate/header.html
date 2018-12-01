@@ -1,0 +1,145 @@
+{% load static %}
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya Sans SC' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        body {
+            font-size: 1.05em;
+            line-height: 1.25em;
+            background: #101010;
+            position: absolute;
+            width: 100%;
+            font-family: 'Quicksand', sans-serif;
+
+        }
+
+        header a{
+            color: #ffffff;
+        }
+        header a:hover{
+            color: white;
+        }
+
+
+
+        header{
+            width: 100%;
+            margin-top: -30px;
+            position: absolute;
+        }
+
+        #options{
+            float: right;
+
+            margin-top: 30px;
+        }
+        .topnav a {
+            font-size: 16px;
+            font-family: "Quicksand",sans-serif;
+            padding: 20px;
+        }
+
+        .topnav{
+            float: right;
+            margin-right: 119px;
+            margin-top: 30px;
+        }
+
+        #menu-icon {
+            display: none;
+            width: 40px;
+            height: 40px;
+        }
+
+        #imag{
+            background: #101010;
+            float: left;
+            margin-left: 105px;
+            display: block;
+        }
+
+        .dropdown{
+            float: right;
+            margin-top: 40px;
+        }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            margin-top: 33px;
+            height: 82px;
+            background-color: #f9f9f9;
+            width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content #dropOptions{
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown #sobreNos {
+            float: right;
+            padding: 10px 20px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover{
+            background-color: #999999;
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+<header >
+    <a id="imag" href="{% url 'main' %}"> <img style=" height: 150px;" src="{% static 'images/logo_third.png' %}"/></a>
+    <nav class="topnav" id="myTopnav">
+        <a href="#" id="menu-icon"><i class="fa fa-bars"></i></a>
+        <a id="options" href="{% url 'email' %}">Contacto</a>
+        <a id="options" href="{% url 'project' %}">Parcerias</a>
+        <div class="dropdown">
+            <a id="sobreNos">Sobre nós
+            </a>
+            <div class="dropdown-content">
+                <a id="dropOptions" href="#">Curriculo</a>
+                <a id="dropOptions" href="#">Historial</a>
+            </div>
+        </div>
+        <a id="options" href="{% url 'project' %}">Projectos</a>
+        <a id="options" href="{% url 'main' %}">Home</a>
+
+    </nav>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</header>
+</body>
+</html>
